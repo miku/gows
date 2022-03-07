@@ -1,2 +1,3 @@
-# gows
-Go workshop notes.
+# Go Workshop Notes
+
+* time and place: TBD
