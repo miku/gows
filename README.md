@@ -9,6 +9,8 @@
 * [Introduction](Intro.md)
     * Motivation and Landscape
     * Hello World
+* [History](History.md)
+    * Timeline of events
 * [More First Programs](MoreFirstPrograms.md)
     * Entry point
     * Importing Code

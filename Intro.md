@@ -350,6 +350,3 @@ $ tree -d -I 'vendor|testdata|internal' /usr/local/go/src/
 
 ```
 
-
-## History
-
