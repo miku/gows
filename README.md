@@ -36,6 +36,13 @@
 * [Project Layout](Projects.md)
     * typical structure
     * naming recommendations
+    * import path and resolution
+    * Go modules
+    * mixing public and private code
+    * versioning libraries
+* [IO](IO.md)
+    * working with files
+    * readers and writers
 * [Concurrency](Concurrency.md)
     * classic and CSP style
     * goroutines
