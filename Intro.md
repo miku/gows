@@ -35,6 +35,15 @@ Some exceptions, e.g. OS specific code, like [syscall](https://golang.org/pkg/sy
 ## Hello, World
 
 [embedmd]:# (x/hello/main.go)
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello, world")
+}
+```
 
 Save code into a file, e.g. `main.go` - then:
 
