@@ -45,6 +45,10 @@
 * [IO](IO.md)
     * working with files
     * readers and writers
+* [Serialization](Serialization.md)
+    * struct tags
+    * JSON
+    * XML
 * [Concurrency](Concurrency.md)
     * classic and CSP style
     * goroutines
