@@ -38,5 +38,3 @@ Go code is expected to be encoded in UTF-8.
 > [https://go.dev/blog/strings](https://go.dev/blog/strings)
 
 
-## Strings
-

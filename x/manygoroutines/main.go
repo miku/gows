@@ -1,22 +1,27 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"runtime"
 	"time"
 )
 
+var (
+	N     = flag.Int("n", 10, "number of goroutines to start")
+	sleep = flag.Duration("s", 100*time.Millisecond, "how long each goroutine sleeps")
+)
+
 func main() {
-	log.Println("Starting...")
-	N := 500000
-	for i := 0; i < N; i++ {
-		go func() {
-			time.Sleep(1 * time.Second)
-		}()
+	flag.Parse()
+	log.Printf("starting %d goroutines", *N)
+	started := time.Now()
+	for i := 0; i < *N; i++ {
+		go f()
 	}
-	log.Printf("started %d goroutines, running: %d", N, runtime.NumGoroutine())
+	log.Printf("%d/%d goroutines started/running in %v", *N, runtime.NumGoroutine(), time.Since(started))
 }
 
-// $ go run x/manygoroutines/main.go
-// 2022/05/02 23:54:44 Starting...
-// 2022/05/02 23:54:45 started 500000 goroutines, running: 490075
+func f() {
+	time.Sleep(*sleep)
+}

@@ -6,21 +6,21 @@
 
 > 14/28
 
-* [Introduction](Intro.md)
+* [Introduction](1-Intro.md)
     * Motivation and Landscape
     * Hello World
     * Task: "helloworld"
-* [History](History.md)
+* [History](2-History.md)
     * Timeline of events
-* [More First Programs](MoreFirstPrograms.md)
+* [More First Programs](3-MoreFirstPrograms.md)
     * Entry point
     * Importing Code
     * Visibility (public, private)
-* [Language Overview](Language.md)
+* [Language Overview](4-Language.md)
     * Basic Types
     * Variable Declarations
     * Control Structures: if, for, switch
-* [More Types](MoreTypes.md)
+* [More Types](5-MoreTypes.md)
     * Arrays
     * Slices
     * Maps
@@ -28,30 +28,30 @@
     * Methods
     * Pointers
     * Gotchas
-* [Interfaces](Interfaces.md)
+* [Interfaces](6-Interfaces.md)
     * Structural Typing
     * Small interfaces
     * Variants (basic, embedding, general, [ref/spec](https://go.dev/ref/spec#Interface_types))
-* [Go OOP?](OO.md)
+* [Go OOP?](7-OO.md)
     * Is Go object oriented? [FAQ](https://go.dev/doc/faq#Is_Go_an_object-oriented_language)
-* [Error Handling](Errors.md)
+* [Error Handling](8-Errors.md)
     * Custom Error Types
     * Wrapping and unwrapping errors
-* [Project Layout](Projects.md)
+* [Project Layout](9-Projects.md)
     * typical structure
     * naming recommendations
     * import path and resolution
     * Go modules
     * mixing public and private code
     * versioning libraries
-* [IO](IO.md)
+* [IO](10-IO.md)
     * working with files
     * readers and writers
-* [Serialization](Serialization.md)
+* [Serialization](11-Serialization.md)
     * struct tags
     * JSON
     * XML
-* [Concurrency](Concurrency.md)
+* [Concurrency](12-Concurrency.md)
     * classic and CSP style
     * goroutines
     * channels
@@ -59,19 +59,19 @@
     * the `sync` package
     * error handling
     * helpers: `errgroup`
-* [Testing Go Code](Testing.md)
+* [Testing Go Code](13-Testing.md)
     * Unit Test
     * Subtests
     * Benchmarks
     * Testcontainers
-* [HTTP clients](HTTP.md)
+* [HTTP clients](14-HTTP.md)
     * clients and transport
     * standard clients, third party clients
-* [HTTP servers](Servers.md)
+* [HTTP servers](15-Servers.md)
     * handlers
     * router, e.g. gorilla/mux
     * testing
-* [Database access](Databases.md)
+* [Database access](16-Databases.md)
     * package db, db/sql
     * database drivers
     * sqlx helper
