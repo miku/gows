@@ -14,7 +14,8 @@ func main() {
 
 	for i := 0; i < w; i++ {
 		for j := 0; j < h; j++ {
-			data[i] = append(data[i], uint8(i*j%255))
+			// data[i] = append(data[i], uint8(i*j%255))
+			data[i] = append(data[i], uint8(8*(i+j)*i+30*j))
 		}
 	}
 	img := image.NewRGBA(image.Rectangle{

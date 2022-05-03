@@ -11,6 +11,15 @@ Use 4 different styles of variable declaration and write a program that prints o
 0 b 123 d
 ```
 
+## Random Image
+
+Generate a random PNG image, similar to the following examples.
+
+![](static/randomimg-1.png)
+
+![](static/randomimg-2.png)
+
+
 ## Word frequencies
 
 Create a program that implements a word counter. Use a map to map tokens to their count.
