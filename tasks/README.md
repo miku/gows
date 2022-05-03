@@ -15,9 +15,9 @@ Use 4 different styles of variable declaration and write a program that prints o
 
 Generate a random PNG image, similar to the following examples.
 
-![](static/randomimg-1.png)
+![](../static/randomimg-1.png)
 
-![](static/randomimg-2.png)
+![](../static/randomimg-2.png)
 
 
 ## Word frequencies
