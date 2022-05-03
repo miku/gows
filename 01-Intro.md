@@ -155,6 +155,14 @@ debug and maintain—large software systems.
 
 -- [https://talks.golang.org/2012/splash.article](https://talks.golang.org/2012/splash.article)
 
+A 2022 article: [The Go Programming Language and Environment](https://cacm.acm.org/magazines/2022/5/260357-the-go-programming-language-and-environment/fulltext)
+
+Some bits:
+
+> Although the design of most languages concentrates on innovations in syntax,
+> semantics, or typing, Go is focused on the software development process
+> itself.
+
 
 ## Extra: Stdlib packages
 
@@ -422,19 +430,6 @@ You'll need to run this in a directory with Go files, otherwise you might see a:
 
 ```
 doc: no buildable Go source files in
-```
-
-By default, `go doc` will show an overview. To see all documentation for a package:
-
-```
-$ go doc -all leveldb # inside a module
-$ go doc -all ./skate # outside go mod
-```
-
-Or refering to the full package name:
-
-```
-$ go doc -all github.com/syndtr/goleveldb/leveldb
 ```
 
 Show full source:

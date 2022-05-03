@@ -28,6 +28,8 @@ Not required for one-off tools, e.g.:
 * [crfs](https://github.com/google/crfs)
 * ...
 
+For a first tool, this minimalistic approach is quite nice.
+
 ## Encoding
 
 Go code is expected to be encoded in UTF-8.

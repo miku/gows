@@ -1,0 +1,42 @@
+# Tasks
+
+## Hello World
+
+## Variable Declarations
+
+Go has the "var" keyword, which can be used to declare variables, as well as a shorthand notation.
+Use 4 different styles of variable declaration and write a program that prints out:
+
+```
+0 b 123 d
+```
+
+## Word frequencies
+
+Create a program that implements a word counter. Use a map to map tokens to their count.
+
+```shell
+$ links -dump https://go.dev/ref/spec | go run tasks/wordfreq/main.go | sort -nr | head -15
+1597    the
+997     a
+902     of
+889     type
+832     is
+568     and
+464     //
+446     to
+400     =
+346     in
+319     or
+317     an
+316     be
+310     are
+285     The
+...
+```
+
+## Switch 
+
+Switch can be used with variables of many types, or no variable at all. Write
+a short program, that get current day and depending on the hour print "Good
+morning" (before noon), "Good afternoon" (before 5pm) or "Good evening".

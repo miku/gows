@@ -36,7 +36,6 @@ opposed to C, Java, ...):
 > instance each element of an array of structs will have its fields zeroed if
 > no value is specified.
 
-
 ## Types
 
 ### Primitive Types

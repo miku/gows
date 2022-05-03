@@ -46,7 +46,12 @@
     * struct tags
     * JSON
     * XML
-* [Concurrency](12-Concurrency.md)
+* [Testing Go Code](12-Testing.md)
+    * Unit Test
+    * Subtests
+    * Benchmarks
+    * Testcontainers
+* [Concurrency](13-Concurrency.md)
     * classic and CSP style
     * goroutines
     * channels
@@ -54,11 +59,6 @@
     * the `sync` package
     * error handling
     * helpers: `errgroup`
-* [Testing Go Code](13-Testing.md)
-    * Unit Test
-    * Subtests
-    * Benchmarks
-    * Testcontainers
 * [HTTP clients](14-HTTP.md)
     * clients and transport
     * standard clients, third party clients
