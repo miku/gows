@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../aboutgo"
+		},
+		{
+			"path": "../concgo"
+		},
+		{
+			"path": "../goexp"
+		},
+		{
+			"path": "../goforprogrammers"
+		},
+		{
+			"path": "../golang6h"
+		},
+		{
+			"path": "../golangintro"
+		},
+		{
+			"path": "../golangnetpkg"
+		},
+		{
+			"path": "../gomodintro"
+		},
+		{
+			"path": "../gonotes"
+		},
+		{
+			"path": "../gospace"
+		},
+		{
+			"path": "../gotchas"
+		}
+	],
+	"settings": {}
+}

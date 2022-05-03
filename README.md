@@ -9,6 +9,7 @@
 * [Introduction](Intro.md)
     * Motivation and Landscape
     * Hello World
+    * Task: "helloworld"
 * [History](History.md)
     * Timeline of events
 * [More First Programs](MoreFirstPrograms.md)
@@ -17,6 +18,7 @@
     * Visibility (public, private)
 * [Language Overview](Language.md)
     * Basic Types
+    * Variable Declarations
     * Control Structures: if, for, switch
 * [More Types](MoreTypes.md)
     * Arrays

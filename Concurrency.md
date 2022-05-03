@@ -45,6 +45,8 @@ func main() {
 // 2022/05/02 23:54:45 started 500000 goroutines, running: 490075
 ```
 
+* there is no outside control 
+
 
 ## Channels
 
