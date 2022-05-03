@@ -356,7 +356,7 @@ $ tree -d -I 'vendor|testdata|internal' /usr/local/go/src/
 
 The go tool covers many aspects of code life cycle, e.g. formatting, running, building, testing, linting code, etc. 
 
-![](static/go-tool.png)
+![](static/gotool.png)
 
 
 ### Editors and helpers
