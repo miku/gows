@@ -526,4 +526,6 @@ func main() {
 }
 ```
 
+More on format verbs: [https://pkg.go.dev/fmt#hdr-Printing](https://pkg.go.dev/fmt#hdr-Printing)
+
 More on that in [https://blog.golang.org/strings](https://blog.golang.org/strings).
