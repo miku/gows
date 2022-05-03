@@ -71,7 +71,7 @@
     * handlers
     * router, e.g. gorilla/mux
     * testing
-* [database access](Databases.md)
+* [Database access](Databases.md)
     * package db, db/sql
     * database drivers
     * sqlx helper
