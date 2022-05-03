@@ -6,21 +6,21 @@
 
 > 14/28
 
-* [Introduction](1-Intro.md)
+* [Introduction](01-Intro.md)
     * Motivation and Landscape
     * Hello World
     * Task: "helloworld"
-* [History](2-History.md)
+* [History](02-History.md)
     * Timeline of events
-* [More First Programs](3-MoreFirstPrograms.md)
+* [More First Programs](03-MoreFirstPrograms.md)
     * Entry point
     * Importing Code
     * Visibility (public, private)
-* [Language Overview](4-Language.md)
+* [Language Overview](04-Language.md)
     * Basic Types
     * Variable Declarations
     * Control Structures: if, for, switch
-* [More Types](5-MoreTypes.md)
+* [More Types](05-MoreTypes.md)
     * Arrays
     * Slices
     * Maps
@@ -28,16 +28,16 @@
     * Methods
     * Pointers
     * Gotchas
-* [Interfaces](6-Interfaces.md)
+* [Interfaces](06-Interfaces.md)
     * Structural Typing
     * Small interfaces
     * Variants (basic, embedding, general, [ref/spec](https://go.dev/ref/spec#Interface_types))
-* [Go OOP?](7-OO.md)
+* [Go OOP?](07-OO.md)
     * Is Go object oriented? [FAQ](https://go.dev/doc/faq#Is_Go_an_object-oriented_language)
-* [Error Handling](8-Errors.md)
+* [Error Handling](08-Errors.md)
     * Custom Error Types
     * Wrapping and unwrapping errors
-* [Project Layout](9-Projects.md)
+* [Project Layout](09-Projects.md)
     * typical structure
     * naming recommendations
     * import path and resolution
