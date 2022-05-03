@@ -21,13 +21,8 @@
     * Variable Declarations
     * Control Structures: if, for, switch
 * [More Types](05-MoreTypes.md)
-    * Arrays
     * Slices
     * Maps
-    * Structs
-    * Methods
-    * Pointers
-    * Gotchas
 * [Interfaces](06-Interfaces.md)
     * Structural Typing
     * Small interfaces

@@ -2,7 +2,7 @@
 
 * three values: pointer to storage array, length, capacity
 
-![](SlicesViz.png)
+![](static/SlicesViz.png)
 
 * Slice tricks: https://github.com/golang/go/wiki/SliceTricks
 
@@ -94,7 +94,7 @@ Custom filters.
 # Map Types
 
 Go has a single map type, which is not thread safe. This type either uses
-literals or `make` for initialization.  
+literals or `make` for initialization.
 
 Use the builtin delete to delete entries.
 
