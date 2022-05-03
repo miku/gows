@@ -1,6 +1,9 @@
-package tabledriven
+package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 var flagtests = []struct {
 	in  string
@@ -21,10 +24,9 @@ var flagtests = []struct {
 }
 
 func TestFlagParser(t *testing.T) {
-	var flagprinter flagPrinter
 	for _, tt := range flagtests {
 		t.Run(tt.in, func(t *testing.T) {
-			s := Sprintf(tt.in, &flagprinter)
+			s := fmt.Sprintf("[%v]", tt.in)
 			if s != tt.out {
 				t.Errorf("got %q, want %q", s, tt.out)
 			}
