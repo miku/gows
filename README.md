@@ -1,10 +1,9 @@
 # Go Workshop Notes
 
-> time and place: TBD
+> instructor: [about](https://github.com/miku/goexp/blob/main/About.md)
 
 ## Outline
 
-> 14/28
 
 * [Introduction](01-Intro.md)
     * Motivation and Landscape
