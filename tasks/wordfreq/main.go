@@ -9,7 +9,6 @@ import (
 
 func main() {
 	// 1. Create map mapping strings to int (i.e. a counter)
-	m := make(map[string]int)
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {

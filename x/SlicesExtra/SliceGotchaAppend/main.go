@@ -16,6 +16,11 @@ func f() {
 
 	fmt.Println("y", y) // WHAT IS Y? -- 0 1 2 | 0 1 2   | 0 1 2 3
 	fmt.Println("z", z) // WHAT IS Z? -- 0 1 3 | 0 1 2 3 | 0 1 2 3
+
+	// sliceInfo("x", x)
+	// sliceInfo("y", y)
+	// sliceInfo("z", z)
+
 }
 
 func g() {
@@ -37,15 +42,15 @@ func g() {
 	sliceInfo("y", y)
 	sliceInfo("z", z)
 
-	fmt.Println("y", y) // WHAT IS Y? | 0 1 2 3 | 0 1 2 3   | ... 000 | 0 1 2 4
-	fmt.Println("z", z) // WHAT IS Z? | 0 1 2 4 | 0 1 2 3 4 | ... 000 | 0 1 2 4
+	// fmt.Println("y", y) // WHAT IS Y? | 0 1 2 3 | 0 1 2 3   | ... 000 | 0 1 2 4
+	// fmt.Println("z", z) // WHAT IS Z? | 0 1 2 4 | 0 1 2 3 4 | ... 000 | 0 1 2 4
 }
 
 func main() {
-	// fmt.Println("f")
-	// f()
-	fmt.Println("g")
-	g()
+	fmt.Println("f")
+	f()
+	// fmt.Println("g")
+	// g()
 }
 
 func sliceInfo(name string, s []int) {
