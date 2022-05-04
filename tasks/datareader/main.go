@@ -29,7 +29,7 @@ func randomString(n int) string {
 
 func main() {
 	// 4. Declare a variable of interface type "DataReader" and assign e.g. a
-	// "RandomReader" to it. var dr DataReader = NewStringReader("hello")
+	// "RandomReader" to it.
 
 	// 5. Call "Read" on the type and print out the value.
 
