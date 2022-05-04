@@ -47,6 +47,10 @@ thread. It now defaults to the number of CPUs.
 > The GOMAXPROCS variable limits the number of operating system threads that can
 > execute user-level Go code simultaneously. -- https://pkg.go.dev/runtime
 
+Looking into the scheduler with `GODEBUG`:
+
+* [../../x/godebug/main.go](../../x/godebug/main.go)
+
 ## Goroutines
 
 > A "go" statement starts the execution of a function call as an independent
@@ -126,14 +130,15 @@ The channel axioms:
 
 Package context was added only in Go 1.7, as a way to unify cancellation a bit.
 
-* go concurrency gives you the parts, but no no level constructs
-* you library should only expose channels when it must
+* go concurrency gives you the parts, but no higher level constructs
+* your library should only expose channels when it must
 * keep concurrency under the hood but you API sequential
 * callbacks are possible, but it is not the pattern of choice in go
 * scheduling is done by the go runtime, indeterminate
 * when multiple select cases are possible one is chosen at random
 
-A study found just as many bugs in Go code using CSP vs classic structures like mutexes
+A [study](https://songlh.github.io/paper/go-study.pdf) found about the same
+ratio of bugs in Go code using CSP vs classic structures like mutexes.
 
 
 ## Typical patterns
