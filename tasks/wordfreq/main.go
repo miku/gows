@@ -5,26 +5,19 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 )
 
 func main() {
 	// 1. Create map mapping strings to int (i.e. a counter)
 	m := make(map[string]int)
+
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		line := scanner.Text()
+		// 2. Split line into tokens, by splitting on a single whitespace (see: https://pkg.go.dev/strings#Split)
 
-		// 2. Split line into tokens
-		tokens := strings.Split(line, " ")
-		// 3. Increment count for each token.
-		for _, t := range tokens {
-			t = strings.TrimSpace(t)
-			if len(t) == 0 {
-				continue
-			}
-			m[t]++
-		}
+		// 3. For each token, increment its count in the map.
+
 	}
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)

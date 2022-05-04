@@ -3,16 +3,30 @@
 Let's build a small command line project from scratch.
 
 * create a new directory
-* go mod init "numbers"
-* create a new file "numbers.go"
+* go mod init "calc"
+* create a new file "calc.go"
+    * implement a function `Add(a, b float64) float64`
 * create a new directory "cmd"
-* put a new file under "cmd/numbers/main.go"
+* put a new file under "cmd/calc/main.go"
+    * create a `main` function
+    * print out the result of `calc.Add` with hard-coded values
 
 ## Layout
 
+```
+.
+├── calc.go
+├── cmd
+│   └── calc
+│       └── main.go
+├── go.mod
+├── LICENSE
+└── README.md
+```
+
 ## Documentation
 
-## Build Flags
+Inline docs.
 
 ----
 

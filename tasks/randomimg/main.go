@@ -9,15 +9,14 @@ import (
 )
 
 func main() {
-	w, h := 480, 480
-	var data [][]uint8 = make([][]uint8, w)
+	// 1. Declare values for width and height (e.g. w and h).
 
-	for i := 0; i < w; i++ {
-		for j := 0; j < h; j++ {
-			// data[i] = append(data[i], uint8(i*j%255))
-			data[i] = append(data[i], uint8(8*(i+j)*i+30*j))
-		}
-	}
+	// 2. Declare and initialize a two-dimensional slice of uint8 to hold grayscale values.
+
+	// 3. Fill the slice with values. You can use a fixed value (e.g. 0) or
+	// calculate a value in some interesting way (e.g. "i * j % 255")
+
+	// Move data into an image and write it out as png.
 	img := image.NewRGBA(image.Rectangle{
 		image.Point{0, 0},
 		image.Point{w, h}})
@@ -32,7 +31,6 @@ func main() {
 			})
 		}
 	}
-
 	f, err := os.Create("image.png")
 	if err != nil {
 		log.Fatal(err)

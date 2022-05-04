@@ -1,6 +1,10 @@
 # Tasks
 
+Some sample tasks.
+
 ## Hello World
+
+A hello world.
 
 ## Variable Declarations
 
@@ -49,3 +53,14 @@ $ links -dump https://go.dev/ref/spec | go run tasks/wordfreq/main.go | sort -nr
 Switch can be used with variables of many types, or no variable at all. Write
 a short program, that get current day and depending on the hour print "Good
 morning" (before noon), "Good afternoon" (before 5pm) or "Good evening".
+
+## Bitcoin price
+
+Write a program that fetches the current bitcoin price from an API and prints it out.
+
+```
+$ go run btcprice.go 
+
+```
+
+You could use [JSONGen](https://github.com/bemasher/JSONGen) to generate a struct for some example JSON data. 

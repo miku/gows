@@ -17,6 +17,33 @@ in nature.
 * The method set for a pointer, includes methods implemented with both pointer and value receivers.
 * Methods declared with a pointer receiver, only implement the interface with pointer values.
 * Methods declared with a value receiver, implement the interface with both a value and pointer receiver.
-* The rules of method sets apply to interface types.
 * Interfaces are reference types, don't share with a pointer.
 * This is how we create polymorphic behavior in go.
+
+## Examples
+
+* [x/interfaces/main.go](x/interfaces/main.go)
+
+## Type Assertion and Type Switch
+
+* type assertions can retrieve the concrete type
+* type switch allows to switch based on type
+
+## Interface Composition
+
+* [https://pkg.go.dev/io#ReadWriter](https://pkg.go.dev/io#ReadWriter)
+
+```
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+
+type ReadWriter interface {
+    Reader
+    Writer
+}
+```
