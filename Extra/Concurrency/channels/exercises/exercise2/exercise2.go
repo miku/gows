@@ -10,7 +10,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -24,15 +23,15 @@ func init() {
 }
 
 func main() {
-
 	// Create the buffer channel with a buffer for
 	// each goroutine to be created.
 
 	// Iterate and launch each goroutine.
 
-		// Create an anonymous function for each goroutine that
-		// generates a random number and sends it on the channel.
-	}
+	// Create an anonymous function for each goroutine that
+	// generates a random number and sends it on the channel.
+
+	rand.Intn(100)
 
 	// Create a variable to be used to track received messages.
 	// Set the value to the number of goroutines created.

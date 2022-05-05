@@ -69,3 +69,14 @@
     * package db, db/sql
     * database drivers
     * sqlx helper
+
+----
+
+Follow up:
+
+* Linkchecker
+* Project layout, modules
+    * add library
+    * add service
+* Services
+* Misc

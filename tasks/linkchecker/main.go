@@ -1,86 +1,48 @@
 package main
 
+import "log"
+
 // Let's write a program that takes a list of URLs and retrieves them in
 // parallel.
+//
+// We can use http.Get to retrieve a URL:
+//
+//     resp, err := http.Get("http://heise.de")
+//     if err != nil {
+//
+//     }
+//     defer resp.Body.Close()
+//     statusCode := resp.StatusCode
+//
+// --------
 
-import (
-	"bufio"
-	"encoding/json"
-	"fmt"
-	"io"
-	"log"
-	"net/http"
-	"os"
-	"runtime"
-	"strings"
-	"sync"
-	"time"
-)
+// Let's think about the different stages.
 
-// workResult of a URL lookup
-type workResult struct {
-	Link       string `json:"link"`
-	StatusCode int    `json:"status"`
-	Err        error  `json:"err"`
-}
+// 1. We could start as many goroutines as we have links, but that's not
+// bounded. So let's try a worker pool.
 
-var client = http.Client{
-	Timeout: 5 * time.Second,
-}
+// 2. Start N goroutines that will be our workers. There workers will fetch the
+// URL.
 
-// worker takes work item off queue and puts result back on an out channel.
-func worker(queue chan string, out chan workResult, wg *sync.WaitGroup) {
-	defer wg.Done()
-	for link := range queue {
-		resp, err := client.Get(link)
-		r := workResult{Link: link, Err: err}
-		if err == nil {
-			r.StatusCode = resp.StatusCode
-		}
-		out <- r
-	}
-}
+// 3. Each worker will need to receive "work", the sender wants to signal when
+// work is done.
 
-// writer takes results and writes them out, errc serves both as a way to
-// singal the end (with nil) and pass the error.
-func writer(out chan workResult, done chan bool) {
-	for wr := range out {
-		b, err := json.Marshal(wr)
-		if err != nil {
-			log.Printf("failed to marshal result: %v", err)
-		} else {
-			fmt.Println(string(b))
-		}
-	}
-	done <- true
-}
+// 4. Further options: We could use a fan-out/fan-in approach - that is we
+// distribute the work across many workers, but collect the results in a single
+// place, e.g. to summarize the result or send it off in a batch.
 
 func main() {
-	var (
-		br    = bufio.NewReader(os.Stdin)
-		queue = make(chan string)
-		out   = make(chan workResult)
-		done  = make(chan bool)
-		wg    sync.WaitGroup
-	)
-	for i := 0; i < runtime.NumCPU(); i++ {
-		wg.Add(1)
-		go worker(queue, out, &wg)
+	urls := []string{
+		"http://www.youtube.com",
+		"http://www.facebook.com",
+		"http://www.baidu.com",
+		"http://www.yahoo.com",
+		"http://www.amazon.com",
+		"http://www.wikipedia.org",
+		"http://www.qq.com",
+		"http://www.google.co.in",
+		"http://www.twitter.com",
+		"http://www.live.com",
 	}
-	go writer(out, done)
-	for {
-		line, err := br.ReadString('\n')
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			log.Fatal(err)
-		}
-		line = strings.TrimSpace(line)
-		queue <- line
-	}
-	close(queue)
-	wg.Wait()
-	close(out)
-	<-done
+	log.Printf("%d urls", len(urls))
 }
