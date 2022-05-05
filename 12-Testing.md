@@ -16,7 +16,13 @@ There is a "testing" package and a type `testing.T` that is passed into the test
 
 ## Running tests
 
-...
+
+
+
+## Mocking
+
+* test doubles for external dependencies
+
 
 # Benchmarking and Profiling
 
