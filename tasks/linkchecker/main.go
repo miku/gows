@@ -1,43 +1,86 @@
 package main
 
+// Let's write a program that takes a list of URLs and retrieves them in
+// parallel.
+
 import (
+	"bufio"
+	"encoding/json"
+	"fmt"
+	"io"
 	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"strings"
+	"sync"
+	"time"
 )
 
-// Let's write a program that takes a list of URLs and retrieves them in
-// parallel. We want to check the status code of each link.
-//
-// The tasks may ask to rewrite parts of the program.
-//
-// ----------------
+// workResult of a URL lookup
+type workResult struct {
+	Link       string `json:"link"`
+	StatusCode int    `json:"status"`
+	Err        error  `json:"err"`
+}
 
-// 1. Write a non-concurrent version, first - using, e.g. http.Get
+var client = http.Client{
+	Timeout: 5 * time.Second,
+}
 
-// 2. Start each check in a goroutine.
+// worker takes work item off queue and puts result back on an out channel.
+func worker(queue chan string, out chan workResult, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for link := range queue {
+		resp, err := client.Get(link)
+		r := workResult{Link: link, Err: err}
+		if err == nil {
+			r.StatusCode = resp.StatusCode
+		}
+		out <- r
+	}
+}
 
-// 3. Use a WaitGroup to wait for all goroutines to finish.
-
-// 4. Implement a worker pool style processing: Start a fixed number of
-// "workers" and create a channel (e.g. of type string) to send a URL to the
-// worker. The worker function can perform the link check and print out the
-// results. You can iterate over incoming "work" with a for loop.
-
-// 5. Create a fan-in function, that collect all results from the worker
-// functions: The worker does not print out the result any more, but sends it
-// to a channel to a function that can then output the results.
+// writer takes results and writes them out, errc serves both as a way to
+// singal the end (with nil) and pass the error.
+func writer(out chan workResult, done chan bool) {
+	for wr := range out {
+		b, err := json.Marshal(wr)
+		if err != nil {
+			log.Printf("failed to marshal result: %v", err)
+		} else {
+			fmt.Println(string(b))
+		}
+	}
+	done <- true
+}
 
 func main() {
-	urls := []string{
-		"http://www.youtube.com",
-		"http://www.facebook.com",
-		"http://www.baidu.com",
-		"http://www.yahoo.com",
-		"http://www.amazon.com",
-		"http://www.wikipedia.org",
-		"http://www.qq.com",
-		"http://www.google.com",
-		"http://www.twitter.com",
-		"http://www.live.com",
+	var (
+		br    = bufio.NewReader(os.Stdin)
+		queue = make(chan string)
+		out   = make(chan workResult)
+		done  = make(chan bool)
+		wg    sync.WaitGroup
+	)
+	for i := 0; i < runtime.NumCPU(); i++ {
+		wg.Add(1)
+		go worker(queue, out, &wg)
 	}
-	log.Println("checking %d urls", len(urls))
+	go writer(out, done)
+	for {
+		line, err := br.ReadString('\n')
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		line = strings.TrimSpace(line)
+		queue <- line
+	}
+	close(queue)
+	wg.Wait()
+	close(out)
+	<-done
 }

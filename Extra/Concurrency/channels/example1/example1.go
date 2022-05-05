@@ -260,7 +260,7 @@ func cancellation() {
 	ch := make(chan string, 1)
 
 	go func() {
-		time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
+		time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
 		ch <- "paper"
 	}()
 
