@@ -2,28 +2,21 @@
 
 * [Intro](Intro.md)
 * [Goroutines](goroutines/README.md)
+    * Ex: 1
 * [Channels](channels/README.md)
+    * Ex: 2, 4
 * [Select](select/README.md)
+
+Projects:
+
+* [Generator](../tasks/generator/main.go)
+* [Timer](../tasks/timer/main.go)
+* [Linkchecker](../tasks/linkchecker/main.go)
 
 ## Extra
 
 * grsize
-* counter
+* counter   
 * errgroup
-* context
-* hedged
-* ctxclient
-* ctxserve
+* [Context](context/README.md)
 * [AggregateGoroutines](https://github.com/kubernetes/apimachinery/blob/06deae5c9c2c030d771a467e086b6c791e8800dc/pkg/util/errors/errors.go#L231-L246)
-
-## Exercises and Projects
-
-* [ErrHandling](ExtraExercises/errhandling/main.go)
-* [ContextAdd](ExtraExercises/ctxadd/main.go)
-
-----
-
-* [Generator](ProjectGenerator.md)
-* [Parallel link checker](ProjectLinkChecker.md)
-* [Parallel line processor](ProjectLineProcessor.md)
-

@@ -14,3 +14,11 @@ There is a `default` case as well.
 * [Example 1](example1/main.go)
 * [Example 2](example2/main.go)
 
+
+
+## Spec
+
+* https://go.dev/ref/spec#Select_statements
+
+> If one or more of the communications can proceed, a single one that can
+> proceed is chosen via a uniform pseudo-random selection.
