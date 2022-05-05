@@ -15,7 +15,7 @@ Projects:
 
 ## Extra
 
-* [grsize](ExtraSources/grsize/main.go)
+* [grsize](ExtraSolutions/grsize/main.go)
 * [counter](ExtraSolutions/counter/main.go)   
 * [errgroup](ExtraSolutions/errgroup/main.go)
 * [Context](context/README.md)
